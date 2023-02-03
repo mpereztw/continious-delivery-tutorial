@@ -1,8 +1,14 @@
 const request = require('supertest');
-const app = require("../../../index");
+const {app, server} = require("../../server")();
 
-test('el endpoint /say/hola hace .....', (done) => {
-    request(app)
-        .get("/say/hola")
-        .expect(200, done)
+describe("", () => {
+    afterAll(async () => {
+        server.close()
+    });
+    
+    test('el endpoint /say/hola hace .....', async () => {
+        await request(app)
+            .get("/say/hola")
+            .expect(200)
+    })
 })
