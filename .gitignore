@@ -105,5 +105,6 @@ dist
 
 .terragrunt-cache
 .terraform
-infra/provider.tf
 *.tfstate
+*.tfstate.backup
+output
