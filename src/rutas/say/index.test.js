@@ -6,15 +6,16 @@ describe("", () => {
         server.close()
     });
     
-    test('el endpoint /say/hola/alvaro to alvaro.', async () => {
+    test('el endpoint /say/hola/Alvaro saluda a Alvaro', async () => {
         await request(app)
-            .get("/say/hola/alvaro")
-            .expect(200, "Hola alvaro")
+            .get("/say/hola/Alvaro")
+            .expect(200, "Hola Alvaro")
+    })
+  
+    test('el endpoint /say/hola/Maria saluda a Maria', async () => {
+        await request(app)
+            .get("/say/hola/Maria")
+            .expect(200, "Hola Maria")
     })
 
-    test('el endpoint /say/hola/maria to maria', async () => {
-        await request(app)
-            .get("/say/hola/maria")
-            .expect(200, "Hola maria")
-    })
 })
